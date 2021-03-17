@@ -8,7 +8,7 @@ let rec truth_table_h lit0 lit1 lit0_v lit1_v = function
   | Lit b -> if b = lit0 
       then lit0_v
       else lit1_v
-  | Not b-> not(truth_table_h lit0 lit0_v lit1 lit1_v b) 
+  | Not b-> not(truth_table_h lit0 lit1 lit0_v lit1_v b) 
   | And (b, c)-> (truth_table_h lit0 lit1 lit0_v lit1_v b) && 
                  (truth_table_h lit0 lit1 lit0_v lit1_v c)
   | Or  (b, c)-> (truth_table_h lit0 lit1 lit0_v lit1_v b) ||
